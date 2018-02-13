@@ -16,6 +16,8 @@ Open Azure ML Workbench, then from the menu select File > Open Command prompt, t
 *	pip install https://cntk.ai/PythonWheel/GPU/cntk-2.3.1-cp35-cp35m-win_amd64.whl
 *	conda install pillow
 *	pip install -U numpy
+* 	pip install configparser
+
 
 ### Create a new project in Azure ML Workbench
 
