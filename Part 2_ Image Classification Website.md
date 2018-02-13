@@ -17,7 +17,7 @@
   2. Upload data to a blob container – Refer to the following guide
      https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer
 
-3.	If you would like to review the code for the site, the full web site project can be accessed from github https://github.com/akegramener/Image-Classification-Using-MS-AI-Tools/tree/master/Code-ImageClassificationWebsite
+3.	If you would like to review the code for the site, the full web site project can be accessed from github https://github.com/akegramener/ImgClassWrkbenchWeb
 
 
 ### Deploy the website
@@ -31,24 +31,10 @@ data-canonical-src="/Images/Website-Deploy-Azure.jpg" width="80%" height="80%"/>
 
 3.	In the above form update the fields, some fields have been filled in automatically. Key fields that need to be updated are the following:
 
-    -	<b>Custom Vision AI-ProjectId:</b> Refer to Part1 Image Classification using Custom Vision Retrieve Project Id, Prediction URL  and  Prediction Key which explains how to retrieve the projectId
-
-    -	<b>Custom Vision-BaseURI:</b>  This the service endpoint url for custom.vision.ai. for information on how to retrieve the endpoint service url refer to Part1 Image Classification using Custom Vision Retrieve Project Id, Prediction URL and  Prediction Key
-
-    -	<b>Custom Vision AI-Prediction Key:</b>  This is required by the custom vision ai service. Refer to Part1 Image Classification using Custom Vision Retrieve Project Id, Prediction URL and  Prediction Key
-
-    -	<b>Computer Vision-Base URI:</b>  This is service endpoint url for Computer Vision Service. Refer to Part 2 Image Classification using Computer Vision Retrieve Endpoint URL and Access Keys
-
-    -	<b>Computer Vision- Subscription Key:</b> This is required by Computer Vision API for authentitcation. Refer to Part 2 Image Classification using Computer Vision Retrieve Endpoint URL and Access Keys
-
     -	<b>Azure ML WorkBench URL:</b> – This is web service url generated using Azure ML. Refer to Part 3 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
 
     -	<b>Azure ML Work Bench - Service Key </b>: This is the service key required by Azure ML Workbench. Refer to Part 3 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
-
-    -	<b>Azure ML Studio - API URI:</b> This is the service url generated in Azure ML Studio. Refer to Part 4 Image Classification using Azure ML Studio Retrieve Prediction URL and Prediction Key
-
-    -	<b>Azure ML Studio - API Key:</b> This is the API key for the web service generated using Azure ML studio. Refer to Part 4 Image Classification using Azure ML Studio Retrieve Prediction URL and Prediction Key
-
+    
     -	<b>Azure Storage - Connection String:</b> This is the connection string for the azure storage account where zip file to the images to be displayed on the website are stored
 
     -	<b>Azure Storage - Container Name:</b>  This is the blob container name where the zip file to displayed on the website will be stored
