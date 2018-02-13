@@ -70,7 +70,7 @@ which will be used for transfer learning in the next step. After the script has 
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Model-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Model-Folder.jpg" width="70%" height="70%"/><p>
  
-8.	In azure ml workbench select the code file 'model.py' and enter arguments  ---train  in the arguments field and click 'Run'
+8.	In azure ml workbench select the code file 'model.py' and enter arguments  --train  in the arguments field and click 'Run'
 Note: model training will take some time complete. Once the script has finished running check the model folder inside the azure_ml_outputs folder, the following files should be added to the folder
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Model-Folder2.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Model-Folder2.jpg" width="70%" height="70%"/><p>
