@@ -4,11 +4,9 @@
 
 1.	You will need an azure paid or trial subscription. To sign up for a subscription refer to the following guide https://azure.microsoft.com/en-us/get-started/?v=17.39
 
-2.	Ensure that you have completed Parts 1 to 4 of this tutorial.
+2.	Downloaded images.zip file from https://github.com/akegramener/INatImages 
 
-3.	Downloaded images.zip file from https://github.com/akegramener/INatImages 
-
-4.	Upload the Images.zip to an azure storage blob container. 
+3.	Upload the Images.zip to an azure storage blob container. 
     If you need further assistance on how to create a blob container and SAS URL follow the steps below:
     
   1. Create a Storage Account and blob container– Refer to the following guide
