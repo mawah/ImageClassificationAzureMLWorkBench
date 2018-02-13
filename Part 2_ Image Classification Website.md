@@ -62,16 +62,7 @@ data-canonical-src="/Images/Website-Downloading-Images.jpg" width="80%" height="
 
 ### Test the Site
 
-1.	Click on options in the top navigation bar
-
-<p align="center"><kbd><img src="/Images/Website-Options.jpg" 
-data-canonical-src="/Images/Website-Options.jpg" width="80%" height="80%"/></kbd><p>
-
-You should see the following window:
-<p align="center"><kbd><img src="/Images/Website-Options-Custom-vision.jpg" 
-data-canonical-src="/Images/Website-Options-Custom-vision.jpg" width="80%" height="80%"/></kbd><p>
-
-2.	Select ‘Custom Vision’ Then clcik on an image on the screen. This will load more images for the species that was selected. Example if you clicked on ‘Actionpterygii – Abudefduf saxatalis’. You should see the following screen:
+2.	Select on an image on the screen by clicking on an image. This will load more images for the species that was selected. Example if you clicked on ‘Actionpterygii – Abudefduf saxatalis’. You should see the following screen:
 
 <p align="center"><kbd><img src="/Images/Website-Predict.jpg" 
 data-canonical-src="/Images/ Website-Predict.jpg" width="80%" height="80%"/></kbd><p>
@@ -81,4 +72,3 @@ data-canonical-src="/Images/ Website-Predict.jpg" width="80%" height="80%"/></kb
 <p align="center"><kbd><img src="/Images/Website-Top5-Predictions.jpg" 
 data-canonical-src="/Images/Website-Top5-Predictions.jpg" width="80%" height="80%"/></kbd><p>
 
-4.	To test all the services, repeat steps 1-3 for Computer Vision AI, Azure ML Workbench and Azure ML studio experiments
