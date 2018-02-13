@@ -29,9 +29,9 @@ data-canonical-src="/Images/Website-Deploy-Azure.jpg" width="80%" height="80%"/>
 
 3.	In the above form update the fields, some fields have been filled in automatically. Key fields that need to be updated are the following:
 
-    -	<b>Azure ML WorkBench URL:</b> – This is web service url generated using Azure ML. Refer to Part 3 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
+    -	<b>Azure ML WorkBench URL:</b> – This is web service url generated using Azure ML. Refer to Part 1 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
 
-    -	<b>Azure ML Work Bench - Service Key </b>: This is the service key required by Azure ML Workbench. Refer to Part 3 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
+    -	<b>Azure ML Work Bench - Service Key </b>: This is the service key required by Azure ML Workbench. Refer to Part 1 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
     
     -	<b>Azure Storage - Connection String:</b> This is the connection string for the azure storage account where zip file to the images to be displayed on the website are stored
 
