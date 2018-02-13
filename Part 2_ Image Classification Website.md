@@ -1,34 +1,14 @@
-## Part 5: Image Classification Website
+## Part 2: Image Classification Website
 
-### Overview
-
-The image classification site in this example makes calls to web services from the following platforms to classify images
-•	Custom Vision - https://customvision.ai/
-
-•	Computer Vision: https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/
-
-•	Azure ML Workbench: https://docs.microsoft.com/en-us/azure/machine-learning/preview/overview-what-is-azure-ml
-
-•	Azure ML Studio:  https://docs.microsoft.com/en-us/azure/machine-learning/preview/overview-what-is-azure-ml
-
-### Getting Started
+## Getting Started
 
 1.	You will need an azure paid or trial subscription. To sign up for a subscription refer to the following guide https://azure.microsoft.com/en-us/get-started/?v=17.39
 
 2.	Ensure that you have completed Parts 1 to 4 of this tutorial.
 
-3.	Downloaded and extract the images from https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz 
+3.	Downloaded images.zip file from https://github.com/akegramener/INatImages 
 
-4.	Zip the images into a folder call it Images.zip. The zip folders show contain folders in the following structure Images > genus > species as shown below
-Example: Images > Actinopterygii > Abudefduf saxatillis
-
-<p align="center"><img src="/Images/Website-Azure-Folder-Structure.jpg" 
-data-canonical-src="/Images/Website-Azure-Folder-Structure.jpg" width="45%" height="45%"/><p>
-
-<p align="center"><img src="/Images/Website-Azure-Folder-Structure-Species.jpg" 
-data-canonical-src="/Images/Website-Azure-Folder-Structure-Species.jpg" width="60%" height="60%"/><p>
-
-2.	Upload the Images.zip to an azure storage blob container. 
+4.	Upload the Images.zip to an azure storage blob container. 
     If you need further assistance on how to create a blob container and SAS URL follow the steps below:
     
   1. Create a Storage Account and blob container– Refer to the following guide
