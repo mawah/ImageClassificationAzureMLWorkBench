@@ -223,18 +223,9 @@ The following switches are used with the az ml service create realtime command:
 •	-r: The type of model. In this case, it's a Python model.
 •	-c: Path to the conda dependencies file where additional packages are specified
 
-
-12.	To test the service you can run the following command:
-	Note:  the command will take a few mins to process. The command passes a base64string of 
-	an image to the service for classifciation
-
-```
-az ml service run realtime -i imgclassapi.amldeployment-f0077894.eastus2 -d "{\"input_df\": [{\"image base64 string\": 	\"iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAIAAAACDbGyAAAAFElEQVR4nGP8//8/AxJgYkAFpPIB6vYDBxf2tWQAAAAASUVORK5CYII=\"}]}"
-```
-
 #### Retrieve Endpoint URL and  Keys
 
-In part 5 of this tutorial, you will need the following:
+In part 2 of this tutorial, you will need the following:
 •	Service End point URL
 •	Primary Key
 
