@@ -38,16 +38,18 @@ Example:<br/>
     Copy all the files from the github project to the new project folder that was created in Azure ML Workbench (Refer to the image below to locate the project folder). For an explanation of the       code please refer to tutorial [Enter tutorial details for the INAT tutorial]. 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Project-Direc.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Project-Direc.jpg" width="80%" height="80%" /><p>
 
-2.  In Azure ML Workbench window choose the first code file 'create_directories.py'. This will create an output folder directory on         your machine in the location provided and create an environment variable for the folder.
+2. Open the project directory (Directory location as shown in the image above). Locate the file 'Config.ini'. Change the 'PATH' variable to a location that you prefer, currently the path points to c:\azure_ml_outputs, if you prefer a different location change the path variable to the desired location
+
+3.  In Azure ML Workbench window choose the first code file 'create_directories.py'. This will create an output folder directory on         your machine in the location provided and create an environment variable for the folder.
     Enter the location for the output directory in the 'arguments' field, as show in the screenshot below. Click 'Run'
          
 <p align="center"><img src="/Images/Azure-ML-Workbench-Create-Directories-Code.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Create-Directories-Code.jpg" width="80%" height="80%"/><p>
  
-3.	Open the folder created in step 2, Inside this folder, locate a folder called 'data' Download and extract the image files from 					https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz  
+4.	Open the folder created in step 2, Inside this folder, locate a folder called 'data' Download and extract the image files from 					https://storage.googleapis.com/us_inat_data/train_val/train_val_images_mini.tar.gz  
 		to the data folder as shown in the image below
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Data.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Data.jpg" width="60%" height="60%" /><p>
 
-4.  In azure ml workbench select code file 'structure_data.py' and click ‘Run
+5.  In azure ml workbench select code file 'structure_data.py' and click ‘Run
     After the code has finished running you should see two folders 'train' and 'validation' in the data
     Folder
 
@@ -59,16 +61,16 @@ Open the train / validation folders, the folders should contain additional folde
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Data-Train-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Data-Train-Folder.jpg" width="70%" height="70%"/><p>
 	
-5.	Next select the code file 'create_map_files.py' in azure ml workbench and click ‘Run’. Once the code has finished running, check the metadata folder in the azure_ml_outputs folder. You should see the files as shown in the screenshot below
+6.	Next select the code file 'create_map_files.py' in azure ml workbench and click ‘Run’. Once the code has finished running, check the metadata folder in the azure_ml_outputs folder. You should see the files as shown in the screenshot below
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Metadata-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Metadata-Folder.jpg" width="70%" height="70%"/><p>
  
-6.	Next select the code file download_model.py' and click 'Run'. This code will download the 'ResNet34 ImageNet CNTK model from https://www.cntk.ai/Models/CNTK_Pretrained/ResNet34_ImageNet_CNTK.model, 
+7.	Next select the code file download_model.py' and click 'Run'. This code will download the 'ResNet34 ImageNet CNTK model from https://www.cntk.ai/Models/CNTK_Pretrained/ResNet34_ImageNet_CNTK.model, 
 which will be used for transfer learning in the next step. After the script has finished running, go to the folder …/azure_ml_outputs/model ensure that the ResNet34 ImageNet has successfully downloaded to this folder
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Model-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Model-Folder.jpg" width="70%" height="70%"/><p>
  
-7.	In azure ml workbench select the code file 'model.py' and enter arguments  ---train  in the arguments field and click 'Run'
+8.	In azure ml workbench select the code file 'model.py' and enter arguments  ---train  in the arguments field and click 'Run'
 Note: model training will take some time complete. Once the script has finished running check the model folder inside the azure_ml_outputs folder, the following files should be added to the folder
 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Model-Folder2.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Model-Folder2.jpg" width="70%" height="70%"/><p>
