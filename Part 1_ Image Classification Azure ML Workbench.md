@@ -210,7 +210,7 @@ az ml account modelmanagement set -n modelmanageac -g amldeploymentrg
       on the model and also for generating the input schema for the service
 
 ```
-az ml service create realtime -c conda_dependencies.yml -f score.py -s service_schema.json -n imgclassapi -v -r python -id2label --model-file resnet34-inat.model
+az ml service create realtime -c conda_dependencies.yml -f score.py -s service_schema.json -n imgclassapi -v -r python -d id2label --model-file resnet34-inat.model
 ```
 
 The following switches are used with the az ml service create realtime command:
