@@ -97,7 +97,6 @@ After the script has run verify that the following files have been copied to the
 	
 ```
 cd c:\azure_ml_deploy
-
 ```
 
 example: the above command will open the folder c:\azure_ml_deploy
@@ -125,10 +124,10 @@ az provider show -n Microsoft.ContainerService
 Azure CLI commands: (sets up an ACS cluster in the eastus2 region named amldeployment)
 The format of the command is as follows:
 
-```
 az ml env setup --cluster -n [your environment name] -l [Azure region e.g. eastus2] [-g [resource group]]
-az ml env setup  --cluster  -n amldeployment  -l eastus2  -g amldeploymentrg
 
+```
+az ml env setup  --cluster  -n amldeployment  -l eastus2  -g amldeploymentrg
 ```
 
 To see if the cluster environment is setup run the following command
