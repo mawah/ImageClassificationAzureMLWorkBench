@@ -62,12 +62,12 @@ data-canonical-src="/Images/Website-Downloading-Images.jpg" width="80%" height="
 
 ### Test the Site
 
-2.	Select on an image on the screen by clicking on an image. This will load more images for the species that was selected. Example if you clicked on ‘Actionpterygii – Abudefduf saxatalis’. You should see the following screen:
+1.	Select on an image on the screen by clicking on an image. This will load more images for the species that was selected. Example if you clicked on ‘Actionpterygii – Abudefduf saxatalis’. You should see the following screen:
 
 <p align="center"><kbd><img src="/Images/Website-Predict.jpg" 
 data-canonical-src="/Images/ Website-Predict.jpg" width="80%" height="80%"/></kbd><p>
 
-3.	Click the ‘Predict’ button at the bottom of any of the images. It should load the predictions from custom vision AI similar to the screen below
+2.	Click the ‘Predict’ button at the bottom of any of the images. It should load the predictions from custom vision AI similar to the screen below
 
 <p align="center"><kbd><img src="/Images/Website-Top5-Predictions.jpg" 
 data-canonical-src="/Images/Website-Top5-Predictions.jpg" width="80%" height="80%"/></kbd><p>
