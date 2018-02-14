@@ -34,7 +34,7 @@ Example:<br/>
 ### Generate The Model
 
 1.  Download the Image Classification project from 
-    https://github.com/akegramener/ImgClassifierMLWrkbench-ClassifierCode 
+   https://github.com/akegramener/ImgClassAzureMLCode
     Copy all the files from the github project to the new project folder that was created in Azure ML Workbench (Refer to the image below to locate the project folder). For an explanation of the       code please refer to tutorial [Enter tutorial details for the INAT tutorial]. 
 <p align="center"><img src="/Images/Azure-ML-Workbench-Project-Direc.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Project-Direc.jpg" width="80%" height="80%" /><p>
 
