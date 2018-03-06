@@ -2,34 +2,26 @@
 
 ## Getting Started
 
-1.	You will need an azure paid or trial subscription. To sign up for a subscription refer to the following guide https://azure.microsoft.com/en-us/get-started/?v=17.39
+1.	You will need an Azure subscription. You can sign up for a trial subscription by following the instructions [here](https://azure.microsoft.com/get-started).
 
-2.	Downloaded images.zip file from https://github.com/akegramener/INatImages 
-
-3.	Upload the Images.zip to an azure storage blob container. 
-    If you need further assistance on how to create a blob container and SAS URL follow the steps below:
+2.	Downloaded the [Images.zip file](https://github.com/akegramener/INatImages/raw/master/Images.zip) containing relevant images, and upload the file to an Azure Storage blob container. If you need further assistance to create a storage account, blob container, or SAS URL for data upload, refer the following links:
     
-  1. Create a Storage Account and blob container– Refer to the following guide
-     https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal 
-     
-  2. Upload data to a blob container – Refer to the following guide
-     https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer
+  1. [Create a Storage Account and blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal ) 
+  2. [Upload data to a blob container with Azure Storage Explorer](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer)
 
-3.	If you would like to review the code for the site, the full web site project can be accessed from github https://github.com/akegramener/ImgClassWrkbenchWeb
+3.	If you would like to review the code for the site, the full web site project can be accessed from [this companion GitHub repository](https://github.com/akegramener/ImgClassWrkbenchWeb).
 
 
 ### Deploy the website
 
-1.	To deploy the website in Azure open the following link https://deploy.azure.com/?repository=https://github.com/akegramener/Image-Classification-Using-MS-AI-Tools/tree/master/Code-ImageClassificationWebsite#/form/setup. If you are not logged into Azure, you will be prompted to log in
+1.	To deploy the website in Azure, open [this link](https://deploy.azure.com/?repository=https://github.com/akegramener/Image-Classification-Using-MS-AI-Tools/tree/master/Code-ImageClassificationWebsite#/form/setup). If you are not logged into Azure, you will be prompted to log in. The following window should launch in your browser:
 
-2.	You should see the following window in the browser
-
-<p align="center"><img src="/Images/Website-Deploy-Azure.jpg" 
+    <p align="center"><img src="/Images/Website-Deploy-Azure.jpg" 
 data-canonical-src="/Images/Website-Deploy-Azure.jpg" width="80%" height="80%"/><p>
 
-3.	In the above form update the fields, some fields have been filled in automatically. Key fields that need to be updated are the following:
+3.	Update the fields in the form shown above (some fields will have been filled in automatically). Key fields that need to be updated are the following:
 
-    -	<b>Azure ML WorkBench URL:</b> – This is web service url generated using Azure ML. Refer to Part 1 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
+    -	<b>Azure ML Workbench URL:</b> – This is the service endpoint URL generated using Azure ML. Refer to the "Retrieve Endpoint URL and Keys" section in [Part 1: Image Classification using Azure ML Workbench](./Part%201_%20Image%20Classification%20Azure%20ML%20Workbench.md).
 
     -	<b>Azure ML Work Bench - Service Key </b>: This is the service key required by Azure ML Workbench. Refer to Part 1 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
     
