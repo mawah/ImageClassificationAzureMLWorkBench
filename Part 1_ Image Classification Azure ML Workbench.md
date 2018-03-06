@@ -7,7 +7,8 @@
 Follow the first two steps in the [Azure Machine Learning Quickstart Guide](https://docs.microsoft.com/en-us/azure/machine-learning/preview/quickstart-installation), which are listed below for clarity:
 
 1.	Create Azure Machine Learning Accounts
-    – In this step, uncheck "create model management account": the model management account will be created later in the tutorial.
+
+	In this step, uncheck "create model management account": the model management account will be created later in the tutorial.
 2.	Install Azure Machine Learning Workbench on Windows
 
 #### Install Python libraries
@@ -35,7 +36,7 @@ pip install configparser
 1.  Download the Image Classification project from [our repository](https://github.com/akegramener/ImgClassAzureMLCode) and copy all the files to the new project folder that was created in Azure ML Workbench. (Refer to the image below to locate the project folder.) For an explanation of the code please refer to tutorial [Enter tutorial details for the INAT tutorial]. 
 	<p align="center"><img src="/Images/Azure-ML-Workbench-Project-Direc.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Project-Direc.jpg" width="80%" height="80%" /><p>
 
-2. Open the project directory (Directory location as shown in the image above). Locate the file 'Config.ini'. Change the 'PATH' variable to a location that you prefer, currently the path points to c:\azure_ml_outputs, if you prefer a different location change the path variable to the desired location
+2. Open the project directory (Directory location as shown in the image above). Locate the file named `Config.ini` and change the 'PATH' variable to a location that you prefer. (By default, the path points to `c:\azure_ml_outputs`.)
 
 3.  In Azure Machine Learning Workbench, click on the Files icon (a file folder) along the left-hand side of the screen, then click on the file named `create_directories.py`. We will use this script to create an output directory on your machine in a specified location and create an environment variable pointing to the new folder. Enter your preferred location for the output directory in the "arguments" field, as show in the screenshot below. Click "Run".
          
@@ -64,165 +65,161 @@ Note: model training will take some time complete. Once the script has finished 
 
 ### Create Web Service to be used for Model Evaluation
 
-The following steps will illustrate how to create a web service that can be used for classifying images using the model
+The following steps will illustrate how to create a web service that can be used for classifying images using the model.
 
-1.	In Azure ML Workbench run ‘score.py’ script, this will create the schema file required by the webservice to determine the type of input and output. The service_schema.json file will be added to the output folder that was created under Generate Model section, step 2
+1.	In Azure Machine Learning Workbench, click on the file named `score.py`, then click "Run". This will create the schema file required by the web service to determine the type of input and output. A file named `service_schema.json` will be added to the output folder that was created in step #2 of the "Generate Model" section.
 
-2.	Select prep_deploy.py script and enter the path of the folder where you would like to create a directory for deployment in the arguments field (as shown in the screenshot below). Then click ‘Run’.  This folder is the location where the script will copy all the files needed to create the web service
+2.	In Azure Machine Learning Workbench, click on the file named `prep_deploy.py` and enter the path of the folder where you would like to create a directory for deployment in the arguments field (as shown in the screenshot below), then click "Run".  This folder is the location where the script will copy all the files needed to create the web service.
 
-<p align="center"><img src="/Images/Azure-ML-Workbench-Prep-Deploy-Code.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Prep-Deploy-Code.jpg" width="70%" height="70%"/><p>
+	<p align="center"><img src="/Images/Azure-ML-Workbench-Prep-Deploy-Code.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Prep-Deploy-Code.jpg" width="70%" height="70%"/><p>
 
-After the script has run verify that the following files have been copied to the folder as shown in the image below
+	After the script has run, verify that files have been copied to the specified folder, as shown in the image below:
 
-<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Deploy-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Deploy-Folder.jpg" width="70%" height="70%"/><p>
-    
+	<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Deploy-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Deploy-Folder.jpg" width="70%" height="70%"/><p>
 
-3.	In Azure ML Workbench, select File > Open Command Prompt (also referred to as the Azure Machine Learning Workbench CLI window, 		or CLI window for short)
+3.	In Azure Machine Leaning Workbench, click on File -> Open Command Prompt. This will launch the Azure Machine Learning Workbench Command Line Interface (CLI) window.
 
-4.	In the Command prompt /CLI window navigate to the folder created for deployment (refer to step 2)
+4.	In the CLI window, navigate to the folder you created for deployment in step two of this section. FOr example, the following command will navigate to a folder named `c:\azure_ml_deploy`:
 	
-```
-cd c:\azure_ml_deploy
-```
+	```
+	cd c:\azure_ml_deploy
+	```
 
-example: the above command will open the folder c:\azure_ml_deploy
+5.	In the CLI window, enter the following commands to register the environment provider:
 
-5.	In the command prompt enter the following commands to register the environment
- 	provider
+	```
+	az provider register -n Microsoft.MachineLearningCompute
+	az provider register -n Microsoft.ContainerRegistry
+	az provider register -n Microsoft.ContainerService
+	```
 
-```
-az provider register -n Microsoft.MachineLearningCompute
-az provider register -n Microsoft.ContainerRegistry
-az provider register -n Microsoft.ContainerService
-```
+	To check if the environment providers have installed correctly, run the following 
+	commands:
 
-To check if the environment providers have installed correctly enter the following 
-commands:
+	```
+	az provider show -n Microsoft.MachineLearningCompute
+	az provider show -n Microsoft.ContainerRegistry
+	az provider show -n Microsoft.ContainerService
+	```
 
-```
-az provider show -n Microsoft.MachineLearningCompute
-az provider show -n Microsoft.ContainerRegistry
-az provider show -n Microsoft.ContainerService
-```
+6.	To create an ACS cluster (which may take 10-20 minutes to be completely provisioned), edit the template command below to choose your desired environment name, Azure region, and resource group, then run the command.
 
-6. Next step is to create an ACS cluster (which may take 10-20 minutes to be completely provisioned). Enter the following command 	to provision an ACS cluster
+	```
+	az ml env setup --cluster -n [your environment name] -l [Azure region e.g. eastus2] [-g [resource group]]
+	```
+	
+	For example, your completed command may resemble:
 
-Azure CLI commands: (sets up an ACS cluster in the eastus2 region named amldeployment)
-The format of the command is as follows:
+	```
+	az ml env setup  --cluster  -n amldeployment  -l eastus2  -g amldeploymentrg
+	```
 
-az ml env setup --cluster -n [your environment name] -l [Azure region e.g. eastus2] [-g [resource group]]
+	After issuing the setup command, check whether cluster environment setup is complete by editing the template command below, then running the command:
 
-```
-az ml env setup  --cluster  -n amldeployment  -l eastus2  -g amldeploymentrg
-```
+	```
+	az ml env show -g [resource group] -n [your environment name] 
+	```
 
-To see if the cluster environment is setup run the following command
+	If the environment is still being created, you will get a message similar to the following:
 
-```
-az ml env show -g  amldeploymentrg  -n amldeployment
-```
+	```
+	{
+	  "Cluster Name": "amldeployment",
+	  "Cluster Size": 2,
+	  "Created On": "2018-01-16T05:54:58.251Z",
+	  "Location": "eastus2",
+	  "Provisioning State": "Creating",
+	  "Resource Group": "amldeploymentrg",
+	  "Subscription": "c9726640-cf74-4111-92f5-0d1c87564b9
+	}
+	```
+	The provisioning state variable will show that the cluster environment is still in the process of being created. Wait 10-20 minutes, then run the command again. You should see output similar to the following if cluster environment was successfully created:
 
-While the environment is being created you will get the following message
-
-```
-{
-  "Cluster Name": "amldeployment",
-  "Cluster Size": 2,
-  "Created On": "2018-01-16T05:54:58.251Z",
-  "Location": "eastus2",
-  "Provisioning State": "Creating",
-  "Resource Group": "amldeploymentrg",
-  "Subscription": "c9726640-cf74-4111-92f5-0d1c87564b9
-}
-```
-The provisioning state variable will show that the cluster environment is still in the process of being created. Wait 10-20 mins then run the command again, you should see the following output if cluster environment was successfully created
-
-```
-{
-  "Cluster Name": "amldeployment",
-  "Cluster Size": 2,
-  "Created On": "2018-01-16T05:54:58.251Z",
-  "Location": "eastus2",
-  "Provisioning State": "Succeeded",
-  "Resource Group": "amldeploymentrg",
-  "Subscription": "c9726640-cf74-4111-92f5-0d1c87564b93"
-}
-```
+	```
+	{
+	  "Cluster Name": "amldeployment",
+	  "Cluster Size": 2,
+	  "Created On": "2018-01-16T05:54:58.251Z",
+	  "Location": "eastus2",
+	  "Provisioning State": "Succeeded",
+	  "Resource Group": "amldeploymentrg",
+	  "Subscription": "c9726640-cf74-4111-92f5-0d1c87564b93"
+	}
+	```
 	   
-7.   Once the cluster has been provisioned successfully, set the environment to the cluster that was just created using the following 	      command
+7.   Once the cluster has been provisioned successfully, set the environment to be the cluster you just created by editing the command template below, then running the command:
 
-```
-az ml env set  -g amldeploymentrg  -n amldeployment
-```
-After running the above command you should see the following output
+	```
+	az ml env set -g [resource group] -n [your environment name] 
+	```
+	After running the above command, you should see output similar to the following:
 
-```
-Kubectl dashboard started for cluster at this endpoint: 127.0.0.1:52843/ui
-Compute set to amldeployment
-```
+	```
+	Kubectl dashboard started for cluster at this endpoint: 127.0.0.1:52843/ui
+	Compute set to amldeployment
+	```
 
-8.  Then switch from the local to the cluster using the following command
+8.  Switch from the local environment to the cluster environment using the following command:
 
-```
-az ml env cluster
-```
-You may get a prompt that says ‘Continue with this subscription (Y/n)?’ enter ‘y’ for yes
-After running the above command, you should see the following message in the command window
+	```
+	az ml env cluster
+	```
+	You may get a prompt that says "Continue with this subscription (Y/n)?" If so, enter "y" to confirm. After running the above command, you should see the following message in the CLI window:
 
-```
-Now running in cluster mode
-```
+	```
+	Now running in cluster mode
+	```
 
-9.   Next create a model management account using the following command:
+9.   Create a model management account by editing the following command template appropriately, then running the command.
      Note: the format of the command is as follows:
               
-     <b>az ml account modelmanagement create -l [Azure region, e.g. eastus2] 
-     -n [your account name] -g [resource group name] --sku-instances 
-		 [number of instances, e.g. 1] --sku-name [Pricing tier for example S1]</b>
+	```
+	az ml account modelmanagement create -l [Azure region, e.g. eastus2] ^
+	-n [your account name] -g [resource group name] ^
+	--sku-instances [number of instances, e.g. 1] --sku-name [Pricing tier for example S1]
+	```
+     
+	For example, your completed command may resemble the following:
 
-```
-az ml account modelmanagement create -l eastus2 -n modelmanageac -g  amldeploymentrg --sku-instances 1 --sku-name DevTest
-```
+	```
+	az ml account modelmanagement create -l eastus2 -n modelmanageac -g  amldeploymentrg --sku-instances 1 --sku-name DevTest
+	```
 
-10.  To select the newly created model management account run the following command
+10.  To select the newly created model management account, edit the command template below, then execute the command:
 
-```
-az ml account modelmanagement set -n modelmanageac -g amldeploymentrg
-```
+	```
+	az ml account modelmanagement set -n [your account name] -g [resource group name]
+	```
 
 11.   Create the web service service (this can take 10-20 minutes), by running the following command:
 
-      Note: The score.py script file contains the code for the service, for running the prediction 
-      on the model and also for generating the input schema for the service
+	```
+	az ml service create realtime -c conda_dependencies.yml -f score.py -s service_schema.json -n imgclassapi -v -r python -d id2label --model-file resnet34-inat.model
+	```
 
-```
-az ml service create realtime -c conda_dependencies.yml -f score.py -s service_schema.json -n imgclassapi -v -r python -d id2label --model-file resnet34-inat.model
-```
+	The following switches are used with the `az ml service create realtime` command:
 
-The following switches are used with the az ml service create realtime command:
+	- `-n`: The app name, which must be all lowercase.
+	- `-f`: The scoring script file name.
+	- `--model-file`: The model file. In this case, it's the pickled model.pkl file.
+	- `-s`: The schema file that contains the schema for the input data to the web service.
+	- `-r`: The type of model. In this case, it's a Python model.
+	- `-c`: Path to the conda dependencies file where additional packages are specified.
 
-•	-n: The app name, which must be all lowercase.
-•	-f: The scoring script file name.
-•	--model-file: The model file. In this case, it's the pickled model.pkl file.
-•	-s: The schema file that contains the schema for the input data to the web service
-•	-r: The type of model. In this case, it's a Python model.
-•	-c: Path to the conda dependencies file where additional packages are specified
+	Note: The `score.py` script file contains the code both for running predictions on the model as well as for generating the service's input schema (as you saw earlier).
 
-#### Retrieve Endpoint URL and  Keys
+#### Retrieve Endpoint URL and Keys
 
-In part 2 of this tutorial, you will need the following:
-•	Service End point URL
-•	Primary Key
+In part 2 of this tutorial, you will need the following credentials to call your web service:
+- Service endpoint URL
+- Service primary key
 
-1.	Navigate to portal.azure.com. Click ‘All resources’ in the left hand menu and search for the modelmanagement account 	 		‘modelmanageac’. Then open modelmanageac 
+1.	Navigate to portal.azure.com. Click "All resources" in the left-hand menu, and search for the modelmanagement account you created earlier. Click on the appropriate search result.
 
-<p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Metadata-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Metadata-Folder.jpg" width="70% height="70%"/><p>
- 
+2.	Under "Application Settings," click "Model Management," then click "Services." Click on the name of the web service you created ("imgclassapi"). A pane will appear containing the endpoint URL and primary/secondary keys.
 
-2.	Next select ‘Model Management’ under application settings. Then select ‘Services’. Then select the ‘imgclassapi’ service. The 		next window contains the end point url and primary and secondary keys
+	<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-ModelManageAc-Services.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-ModelManageAc-Services.jpg" width="70% height="70%"/><p>
 
-<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-ModelManageAc-Services.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-ModelManageAc-Services.jpg" width="70% height="70%"/><p>
+	<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Services-Imgclassapi.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Services-Imgclassapi.jpg" width="70% height="70%"/><p>
 
-<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Services-Imgclassapi.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Services-Imgclassapi.jpg" width="70% height="70%"/><p>
-
-<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Service-Details.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Service-Details.jpg" width="70% height="70%"/><p>
+	<p align="center"><img src="/Images/Azure-ML-Workbench-Azure-ML-Service-Details.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Azure-ML-Service-Details.jpg" width="70% height="70%"/><p>
