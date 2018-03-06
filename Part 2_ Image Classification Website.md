@@ -21,46 +21,47 @@ data-canonical-src="/Images/Website-Deploy-Azure.jpg" width="80%" height="80%"/>
 
 3.	Update the fields in the form shown above (some fields will have been filled in automatically). Key fields that need to be updated are the following:
 
-    -	<b>Azure ML Workbench URL:</b> – This is the service endpoint URL generated using Azure ML. Refer to the "Retrieve Endpoint URL and Keys" section in [Part 1: Image Classification using Azure ML Workbench](./Part%201_%20Image%20Classification%20Azure%20ML%20Workbench.md).
+    -	<b>Azure ML Workbench URL</b>: – This is the service endpoint URL generated using Azure Machine Learning. Refer to the "Retrieve Endpoint URL and Keys" section in [Part 1: Image Classification using Azure ML Workbench](./Part%201_%20Image%20Classification%20Azure%20ML%20Workbench.md).
 
-    -	<b>Azure ML Work Bench - Service Key </b>: This is the service key required by Azure ML Workbench. Refer to Part 1 Image Classification using Azure ML Workbench Retrieve Endpoint URL and  Keys
+    -	<b>Azure ML Workbench - Service Key </b>: This is the service primary key generated using Azure Machine Learning. Refer to the "Retrieve Endpoint URL and Keys" section in [Part 1: Image Classification using Azure ML Workbench](./Part%201_%20Image%20Classification%20Azure%20ML%20Workbench.md).
     
-    -	<b>Azure Storage - Connection String:</b> This is the connection string for the azure storage account where zip file to the images to be displayed on the website are stored
+    -	<b>Azure Storage - Connection String</b>: This is the connection string for the Azure Storage account where the zip file to the images to be displayed on the website is stored.
 
-    -	<b>Azure Storage - Container Name:</b>  This is the blob container name where the zip file to displayed on the website will be stored
+    -	<b>Azure Storage - Container Name</b>: This is the blob container name where the zip file to displayed on the website is stored.
 
 
-4.	Once you have filled in the fields click ‘Next’  then click ‘Deploy’ on the next screen
+4.	Once you have filled in the fields, click "Next,"  then click "Deploy" on the next screen.
 
-<p align="center"><img src="/Images/Website-Deploy-Azure2.jpg" 
+    <p align="center"><img src="/Images/Website-Deploy-Azure2.jpg" 
 data-canonical-src="/Images/Website-Deploy-Azure2.jpg" width="80%" height="80%"/><p>
 
-Note: The deployment takes a few mins to complete
+    Note: The deployment takes a few minutes to complete.
 
-5.	Once the deployment is complete click on the site url at the bottom of the deployment screen. You should see the following screen:
+5.	Once the deployment is complete, click on the site url at the bottom of the deployment screen. You should see the following screen:
 
-<p align="center"><kbd><img src="/Images/Website-Download-Images.jpg" 
+    <p align="center"><kbd><img src="/Images/Website-Download-Images.jpg" 
 data-canonical-src="/Images/Website-Download-Images.jpg" width="80%" height="80%" border="1"/></kbd><p>
 
-6.	Click on the ‘Download Images’ button this will load the images from the azure container that was provided during deployment.
-    Note: this will take a few mins to complete, do not close the window till the download is complete, while the images are downloading you will see the following screen:
+6.	Click on the "Download Images" button to load the images from the Azure blob container that was specified during deployment.
 
-<p align="center"><kbd><img src="/Images/Website-Downloading-Images.jpg" 
+    Note: this will take a few mins to complete. Do not close the window until the download is complete. While the images are downloading, you will see the following screen:
+
+    <p align="center"><kbd><img src="/Images/Website-Downloading-Images.jpg" 
 data-canonical-src="/Images/Website-Downloading-Images.jpg" width="80%" height="80%" border="1"/></kbd><p>
 
-7.	Once the images are downloaded you should see the following screen
+    Once the images are downloaded, you should see the following screen:
     <p align="center"><kbd><img src="/Images/Website-Sample-Images.jpg" 
     data-canonical-src="/Images/Website-Sample-Images.jpg" width="80%" height="80%" border="1"/></kbd><p>
 
 ### Test the Site
 
-1.	Select on an image on the screen by clicking on an image. This will load more images for the species that was selected. Example if you clicked on ‘Actionpterygii – Abudefduf saxatalis’. You should see the following screen:
+1.	Select an image on the screen by clicking on the image. This will load more images for the species that was selected. Example: if you clicked on "Actionpterygii – Abudefduf saxatalis,". you should see the following screen:
 
-<p align="center"><kbd><img src="/Images/Website-Predict.jpg" 
+    <p align="center"><kbd><img src="/Images/Website-Predict.jpg" 
 data-canonical-src="/Images/ Website-Predict.jpg" width="80%" height="80%"/></kbd><p>
 
-2.	Click the ‘Predict’ button at the bottom of any of the images. It should load the predictions from custom vision AI similar to the screen below
+2.	Click the "Predict" button at the bottom of any of the images. It should load the predictions returned by your web service, similar to the screenshot below:
 
-<p align="center"><kbd><img src="/Images/Website-Top5-Predictions.jpg" 
-data-canonical-src="/Images/Website-Top5-Predictions.jpg" width="80%" height="80%"/></kbd><p>
+    <p align="center"><kbd><img src="/Images/Website-Top5-Predictions.jpg" 
+    data-canonical-src="/Images/Website-Top5-Predictions.jpg" width="80%" height="80%"/></kbd><p>
 
