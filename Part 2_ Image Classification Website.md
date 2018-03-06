@@ -6,8 +6,8 @@
 
 2.	Downloaded the [Images.zip file](https://github.com/akegramener/INatImages/raw/master/Images.zip) containing relevant images, and upload the file to an Azure Storage blob container. If you need further assistance to create a storage account, blob container, or SAS URL for data upload, refer the following links:
     
-  1. [Create a Storage Account and blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal ) 
-  2. [Upload data to a blob container with Azure Storage Explorer](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer)
+    1. [Create a Storage Account and blob container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal ) 
+    2. [Upload data to a blob container with Azure Storage Explorer](https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/move-data-to-azure-blob-using-azure-storage-explorer)
 
 3.	If you would like to review the code for the site, the full web site project can be accessed from [this companion GitHub repository](https://github.com/akegramener/ImgClassWrkbenchWeb).
 
