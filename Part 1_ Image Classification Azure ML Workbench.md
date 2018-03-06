@@ -47,7 +47,7 @@ pip install configparser
 
 5.  In Azure Machine Learning Workbench, click on the file named `structure_data.py`, then click "Run". After the code has finished running, you should see two new folders named `train` and `validation` have been created inside the `data` folder.
 	<p align="center"><img src="/Images/Azure-ML-Workbench-Train-Validation-Folders.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Train-Validation-Folders.jpg" width="80%" height="80%" /><p>
-	Navigate into the `train` and `validation` folders. Each of these folders should contain image files sorted into subdirectories by species, as shown in the screen shots below:
+	Navigate into the "train" and "validation" folders. Each of these folders should contain image files sorted into subdirectories by species, as shown in the screen shots below:
 	<p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Folders.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Folders.jpg" width="70%" height="70%"/><p>
 	<p align="center"><img src="/Images/Azure-ML-Workbench-Outputs-Data-Train-Folder.jpg" data-canonical-src="/Images/Azure-ML-Workbench-Outputs-Data-Train-Folder.jpg" width="70%" height="70%"/><p>
 	
